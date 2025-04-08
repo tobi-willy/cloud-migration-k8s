@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Native Frontend</title>
+</head>
+<body>
+  <h1>Cloud Native Web App</h1>
+  <p id="msg">Loading message from backend...</p>
+
+  <script>
+    fetch("http://http://backend-service/api/message")
+      .then(response => response.json())
+      .then(data => document.getElementById("msg").innerText = data.message)
+      .catch(err => document.getElementById("msg").innerText = "Failed to load message.");
+  </script>
+</body>
+</html>
